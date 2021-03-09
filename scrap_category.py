@@ -59,7 +59,7 @@ def scrap_category(url):
             book_data = scrap_book(product_page_url)
             book_data_list.append(book_data)
 
-            """Création d'un fichier local afin de stocker les 
+            """Création d'un fichier local afin de stocker les
             informations récoltées par l'exécution du programme """
 
             current_directory = os.getcwd()
@@ -87,7 +87,8 @@ def scrap_category(url):
         """Création d'un fichier CSV ou sont retranscrites
         les données de façon ordonnée"""
 
-        with open('category.csv', 'w', newline='', encoding="utf-8") as \
+        with open(book_data['category'] + "/" + book_data["category"]
+                  + ".csv", 'w', newline='', encoding="utf-8") as \
                 csv_file:
             fieldnames = book_data_list[0].keys()
             writer = csv.DictWriter(csv_file, fieldnames=fieldnames,
